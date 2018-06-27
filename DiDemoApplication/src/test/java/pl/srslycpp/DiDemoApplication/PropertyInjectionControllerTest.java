@@ -9,16 +9,16 @@ import static org.junit.Assert.assertEquals;
 
 public class PropertyInjectionControllerTest {
 
-    public PropertyInjectionController propertyInjectionController;
+    private PropertyInjectionController propertyInjectionController;
 
     @Before
-    public void setUp() {
+    public void setUp() throws Exception{
         this.propertyInjectionController = new PropertyInjectionController();
         this.propertyInjectionController.greetingService = new GreetingServiceImpl();
     }
 
     @Test
-    public void testGreeting(){
+    public void testGreeting() throws Exception{
        assertEquals(GreetingServiceImpl.GREETING, propertyInjectionController.sayHello());
     }
 }
